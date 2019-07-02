@@ -23,7 +23,7 @@
     <div class="app">
       <h1>What's the weather like today?</h1>
       <br />
-      <h2 id="place">fffxxx</h2>
+      <h2 id="place"></h2>
       <span class="celsius_fahrenheit">C | F</span>
       <p>Change</p>
 
@@ -41,9 +41,13 @@
             <span id="currentTemperature"></span>°C
 
             <ul>
-              <li>feels like 20°</li>
-              <li>windy</li>
-              <li>20-25°C</li>
+              <li id="weatherDescription"></li>
+              <li>
+                <span id="minimumCurrentTemperature"></span>-<span
+                  id="maximumCurrentTemperature"
+                ></span
+                >°C
+              </li>
             </ul>
           </div>
         </div>
