@@ -42,6 +42,6 @@ body {
 .fa-cloud-sun-rain {
   font-size: 70px;
 }
-.currentTemperature {
-  font-weight: 900;
+#currentTemperature {
+  font-size: 25px;
 }
