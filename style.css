@@ -1,0 +1,47 @@
+.app {
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.2);
+  margin: 20px auto;
+  padding: 30px;
+  background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+}
+
+.divider {
+  height: 5px;
+  width: 80%;
+}
+
+h1 {
+  display: inline-block;
+  font-family: "Smythe", cursive;
+  font-size: 45px;
+}
+h2 {
+  display: inline-block;
+  font-family: "Smythe", cursive;
+  font-size: 35px;
+}
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  color: #493e3c;
+}
+.celsius_fahrenheit {
+  float: right;
+  position: relative;
+  right: 20px;
+  top: 10px;
+}
+.fa-sun,
+.fa-cloud-sun,
+.fa-cloud-sun-rain {
+  font-size: 70px;
+}
+.currentTemperature {
+  font-weight: 900;
+}
