@@ -16,61 +16,62 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
- 
+    <div class="app">
+      <h1>What's the weather like today?</h1>
+      <h2>Lisbon</h2>
+      <span class="celsius_fahrenheit">C | F</span>
+      <p>Change</p>
 
-
-          <div class="app">
-               <h1>What's the weather like today?</h1>
-               <h2>Lisbon</h2>
-            <span class="celsius_fahrenheit">C | F</span>
-            <p>Change</p>
-          
-          
-            <div class="container">
-              <div class="row">
-                <div class="col-6">
-                  <img src="images\music_player.png" alt="music player" width="170px" height="170x">
-                </div>
-                <div class="col-6">
-                  <span class="currentTemperature">8°C</span>
-                  <p>
-                    <ul>
-                      <li>feels like 20°</li>
-                      <li>windy</li>
-                      <li>20-25°C</li>
-                    </ul>
-                  </p>
-                </div>
-              </div>
-            </div>
-          
-            <div class="divider">
-              <hr>
-            </div>
-          
-            <div class="container">
-              <div class="row">
-                <div class="col-4">
-                  <strong>Monday</strong><br>
-                  <i class="fas fa-sun"></i><br>
-                  20-22°C
-                </div>
-                <div class="col-4">
-                  <strong>Tuesday</strong><br><i class="fas fa-cloud-sun-rain"></i><br>
-                  21-23°C
-                </div>
-                <div class="col-4">
-                  <strong>Wednesday</strong><br>
-                  <i class="fas fa-cloud-sun"></i><br>
-                  19-23°C
-                </div>
-              </div>
-            </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <img
+              src="images\music_player.png"
+              alt="music player"
+              width="170px"
+              height="170x"
+            />
           </div>
-  </div>
+          <div class="col-6">
+            <span class="currentTemperature"></span>
+
+            <ul>
+              <li>feels like 20°</li>
+              <li>windy</li>
+              <li>20-25°C</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider">
+        <hr />
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-4">
+            <strong>Monday</strong><br />
+            <i class="fas fa-sun"></i><br />
+            20-22°C
+          </div>
+          <div class="col-4">
+            <strong>Tuesday</strong><br /><i class="fas fa-cloud-sun-rain"></i
+            ><br />
+            21-23°C
+          </div>
+          <div class="col-4">
+            <strong>Wednesday</strong><br />
+            <i class="fas fa-cloud-sun"></i><br />
+            19-23°C
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
