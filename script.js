@@ -28,6 +28,44 @@ function showCurrentWeather(response) {
   );
   maximumCurrentTemperature.innerHTML = Math.round(response.data.main.temp_max);
 }
-
 let form = document.querySelector("form");
 form.addEventListener("submit", handleSubmit);
+
+function displayWeatherCurrentLocation() {
+  function showWeatherCurrentLocation(response) {
+    let place = document.querySelector("#place");
+    place.innerHTML = response.data.name;
+    let currentTemperature = document.querySelector("#currentTemperature");
+    currentTemperature.innerHTML = Math.round(response.data.main.temp);
+
+    let weatherDescription = document.querySelector("#weatherDescription");
+    weatherDescription.innerHTML = response.data.weather[0].description;
+
+    let minimumCurrentTemperature = document.querySelector(
+      "#minimumCurrentTemperature"
+    );
+    minimumCurrentTemperature.innerHTML = Math.round(
+      response.data.main.temp_min
+    );
+
+    let maximumCurrentTemperature = document.querySelector(
+      "#maximumCurrentTemperature"
+    );
+    maximumCurrentTemperature.innerHTML = Math.round(
+      response.data.main.temp_max
+    );
+  }
+  function newPosition(position) {
+    let latitude = position.coords.latitude;
+    let longitude = position.coords.longitude;
+
+    let apiKey = "9b41700e7dcfb48ddf3be545946f91cc";
+    let apiEndPoint = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+
+    axios.get(apiEndPoint).then(showWeatherCurrentLocation);
+  }
+  navigator.geolocation.getCurrentPosition(newPosition);
+}
+
+let currentLocation = document.querySelector("#currentLocation");
+currentLocation.addEventListener("click", displayWeatherCurrentLocation);

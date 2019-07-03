@@ -22,15 +22,34 @@
   <body>
     <div class="app">
       <h1>What's the weather like today?</h1>
-      <br />
+
       <form>
-        <input type="text" placeholder="Enter a city" id="keyword" />
-        <input type="submit" value="Search" />
+        <div class="form-row align-items-center">
+          <div class="col-auto">
+            <input
+              type="text"
+              class="form-control"
+              id="keyword"
+              placeholder="Enter a city"
+            />
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-outline-secondary">
+              Search
+            </button>
+          </div>
+        </div>
       </form>
+      <button
+        type="button"
+        class="btn btn-outline-secondary"
+        id="currentLocation"
+      >
+        Current location
+      </button>
       <br />
       <h2 id="place"></h2>
       <span class="celsius_fahrenheit">C | F</span>
-      <p>Change</p>
 
       <div class="container">
         <div class="row">

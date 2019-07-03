@@ -49,3 +49,6 @@ body {
 li {
   text-transform: capitalize;
 }
+form {
+  margin: 20px auto 10px auto;
+}
