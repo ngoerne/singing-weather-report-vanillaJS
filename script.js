@@ -10,7 +10,7 @@ function handleSubmit(event) {
 }
 function showCurrentWeather(response) {
   let currentTemperature = document.querySelector("#currentTemperature");
-  currentTemperature.innerHTML = Math.round(response.data.main.temp);
+  currentTemperature.innerHTML = `${Math.round(response.data.main.temp)}°C`;
 
   let place = document.querySelector("#place");
   place.innerHTML = response.data.name;
@@ -26,7 +26,9 @@ function showCurrentWeather(response) {
   let maximumCurrentTemperature = document.querySelector(
     "#maximumCurrentTemperature"
   );
-  maximumCurrentTemperature.innerHTML = Math.round(response.data.main.temp_max);
+  maximumCurrentTemperature.innerHTML = `-${Math.round(
+    response.data.main.temp_max
+  )}°C`;
 }
 let form = document.querySelector("form");
 form.addEventListener("submit", handleSubmit);

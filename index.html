@@ -38,18 +38,19 @@
               Search
             </button>
           </div>
+          <div class="col-auto">
+            <button
+              type="button"
+              class="btn btn-outline-secondary"
+              id="currentLocation"
+            >
+              Current location
+            </button>
+          </div>
         </div>
       </form>
-      <button
-        type="button"
-        class="btn btn-outline-secondary"
-        id="currentLocation"
-      >
-        Current location
-      </button>
-      <br />
+
       <h2 id="place"></h2>
-      <span class="celsius_fahrenheit">C | F</span>
 
       <div class="container">
         <div class="row">
@@ -62,15 +63,13 @@
             />
           </div>
           <div class="col-6">
-            <span id="currentTemperature"></span>°C
+            <span id="currentTemperature"></span>
 
             <ul>
               <li id="weatherDescription"></li>
               <li>
-                <span id="minimumCurrentTemperature"></span>-<span
-                  id="maximumCurrentTemperature"
-                ></span
-                >°C
+                <span id="minimumCurrentTemperature"></span
+                ><span id="maximumCurrentTemperature"></span>
               </li>
             </ul>
           </div>
