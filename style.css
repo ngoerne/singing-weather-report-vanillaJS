@@ -52,3 +52,14 @@ li {
 form {
   margin: 20px auto 10px auto;
 }
+
+#tomorrow {
+  font-weight: 700;
+}
+#dayAfterTomorrow {
+  font-weight: 700;
+}
+
+#twoDaysAfterTomorrow {
+  font-weight: 700;
+}
