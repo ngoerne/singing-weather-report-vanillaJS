@@ -37,8 +37,9 @@ function displayWeatherCurrentLocation() {
   function showWeatherCurrentLocation(response) {
     let place = document.querySelector("#place");
     place.innerHTML = response.data.name;
+
     let currentTemperature = document.querySelector("#currentTemperature");
-    currentTemperature.innerHTML = Math.round(response.data.main.temp);
+    currentTemperature.innerHTML = `${Math.round(response.data.main.temp)}°C`;
 
     let weatherDescription = document.querySelector("#weatherDescription");
     weatherDescription.innerHTML = response.data.weather[0].description;
@@ -53,9 +54,9 @@ function displayWeatherCurrentLocation() {
     let maximumCurrentTemperature = document.querySelector(
       "#maximumCurrentTemperature"
     );
-    maximumCurrentTemperature.innerHTML = Math.round(
+    maximumCurrentTemperature.innerHTML = `-${Math.round(
       response.data.main.temp_max
-    );
+    )}°C`;
   }
   function newPosition(position) {
     let latitude = position.coords.latitude;
