@@ -3,6 +3,7 @@ function search(city) {
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(url).then(showCurrentWeather);
 }
+
 function handleSubmit(event) {
   event.preventDefault();
   let keyword = document.querySelector("#keyword");
@@ -72,3 +73,37 @@ function displayWeatherCurrentLocation() {
 
 let currentLocation = document.querySelector("#currentLocation");
 currentLocation.addEventListener("click", displayWeatherCurrentLocation);
+
+let now = new Date();
+let date = now.getDate();
+let year = now.getFullYear();
+let day = now.getDay();
+let weekDays = [
+  "Sunday",
+  "Monday",
+  "Tueday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday"
+];
+let weekDay = weekDays[day];
+let month = now.getMonth();
+let monthNames = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December"
+];
+let monthName = monthNames[month];
+
+let displayCurrentDate = document.querySelector("#currentDate");
+displayCurrentDate.innerHTML = `${weekDay}, ${monthName} ${date}, ${year}`;
