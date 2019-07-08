@@ -59,39 +59,71 @@ function showCurrentWeather(response) {
 
   let displayCurrentDate = document.querySelector("#currentDate");
   displayCurrentDate.innerHTML = `${weekDay}, ${monthName} ${date}, ${year}`;
+
+  let iconCurrentWeather = document.querySelector("#iconCurrentWeather");
+  iconCurrentWeather.setAttribute(
+    "src",
+    "http://openweathermap.org/img/w/" + response.data.weather[0].icon + ".png"
+  );
 }
+
 let tomorrow = weekDays[now.getDay() + 1];
 let dayAfterTomorrow = weekDays[now.getDay() + 2];
 let twoDaysAfterTomorrow = weekDays[now.getDay() + 3];
 
 function showForecast(response) {
+  console.log(response.data);
+  let displayTomorrow = document.querySelector("#tomorrow");
+  displayTomorrow.innerHTML = `${tomorrow}`;
+  let iconTomorrowWeather = document.querySelector("#iconTomorrowWeather");
+  iconTomorrowWeather.setAttribute(
+    "src",
+    "http://openweathermap.org/img/w/" +
+      response.data.list[7].weather[0].icon +
+      ".png"
+  );
   let tomorrowTemperature = document.querySelector("#tomorrowTemperature");
   tomorrowTemperature.innerHTML = `${Math.round(
-    response.data.list[8].main.temp
+    response.data.list[7].main.temp
   )}°C`;
+
+  let displayDayAfterTomorrow = document.querySelector("#dayAfterTomorrow");
+  displayDayAfterTomorrow.innerHTML = `${dayAfterTomorrow}`;
+  let iconDayAfterTomorrowWeather = document.querySelector(
+    "#iconDayAfterTomorrowWeather"
+  );
+  iconDayAfterTomorrowWeather.setAttribute(
+    "src",
+    "http://openweathermap.org/img/w/" +
+      response.data.list[15].weather[0].icon +
+      ".png"
+  );
   let dayAfterTomorrowTemperature = document.querySelector(
     "#dayAfterTomorrowTemperature"
   );
   dayAfterTomorrowTemperature.innerHTML = `${Math.round(
-    response.data.list[16].main.temp
-  )}°C`;
-  let twoDaysAfterTomorrowTemperature = document.querySelector(
-    "#twoDaysAfterTomorrowTemperature"
-  );
-  twoDaysAfterTomorrowTemperature.innerHTML = `${Math.round(
-    response.data.list[24].main.temp
+    response.data.list[15].main.temp
   )}°C`;
 
-  console.log(response.data);
-
-  let displayTomorrow = document.querySelector("#tomorrow");
-  displayTomorrow.innerHTML = `${tomorrow}`;
-  let displayDayAfterTomorrow = document.querySelector("#dayAfterTomorrow");
-  displayDayAfterTomorrow.innerHTML = `${dayAfterTomorrow}`;
   let displayTwoDaysAfterTomorrow = document.querySelector(
     "#twoDaysAfterTomorrow"
   );
   displayTwoDaysAfterTomorrow.innerHTML = `${twoDaysAfterTomorrow}`;
+  let iconTwoDaysAfterTomorrowWeather = document.querySelector(
+    "#iconTwoDaysAfterTomorrowWeather"
+  );
+  iconTwoDaysAfterTomorrowWeather.setAttribute(
+    "src",
+    "http://openweathermap.org/img/w/" +
+      response.data.list[23].weather[0].icon +
+      ".png"
+  );
+  let twoDaysAfterTomorrowTemperature = document.querySelector(
+    "#twoDaysAfterTomorrowTemperature"
+  );
+  twoDaysAfterTomorrowTemperature.innerHTML = `${Math.round(
+    response.data.list[23].main.temp
+  )}°C`;
 }
 
 function search(city) {
