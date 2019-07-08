@@ -5,14 +5,14 @@ let day = now.getDay();
 let weekDays = [
   "Sunday",
   "Monday",
-  "Tueday",
+  "Tuesday",
   "Wednesday",
   "Thursday",
   "Friday",
   "Saturday",
   "Sunday",
   "Monday",
-  "Tueday",
+  "Tuesday",
   "Wednesday",
   "Thursday",
   "Friday",
@@ -51,17 +51,12 @@ function showCurrentWeather(response) {
   let weatherDescription = document.querySelector("#weatherDescription");
   weatherDescription.innerHTML = response.data.weather[0].description;
 
-  let minimumCurrentTemperature = document.querySelector(
-    "#minimumCurrentTemperature"
-  );
-  minimumCurrentTemperature.innerHTML = Math.round(response.data.main.temp_min);
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = `Humidity: ${response.data.main.humidity} %`;
 
-  let maximumCurrentTemperature = document.querySelector(
-    "#maximumCurrentTemperature"
-  );
-  maximumCurrentTemperature.innerHTML = `-${Math.round(
-    response.data.main.temp_max
-  )}°C`;
+  let wind = document.querySelector("#wind");
+  wind.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} m/s`;
+
   let displayCurrentDate = document.querySelector("#currentDate");
   displayCurrentDate.innerHTML = `${weekDay}, ${monthName} ${date}, ${year}`;
 }
@@ -102,19 +97,12 @@ function displayCurrentWeatherCurrentLocation() {
     let weatherDescription = document.querySelector("#weatherDescription");
     weatherDescription.innerHTML = response.data.weather[0].description;
 
-    let minimumCurrentTemperature = document.querySelector(
-      "#minimumCurrentTemperature"
-    );
-    minimumCurrentTemperature.innerHTML = Math.round(
-      response.data.main.temp_min
-    );
+    let humidity = document.querySelector("#humidity");
+    humidity.innerHTML = `Humidity: ${response.data.main.humidity} %`;
 
-    let maximumCurrentTemperature = document.querySelector(
-      "#maximumCurrentTemperature"
-    );
-    maximumCurrentTemperature.innerHTML = `-${Math.round(
-      response.data.main.temp_max
-    )}°C`;
+    let wind = document.querySelector("#wind");
+    wind.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} m/s`;
+
     let displayCurrentDate = document.querySelector("#currentDate");
     displayCurrentDate.innerHTML = `${weekDay}, ${monthName} ${date}, ${year}`;
   }
