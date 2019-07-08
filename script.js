@@ -64,7 +64,26 @@ let tomorrow = weekDays[now.getDay() + 1];
 let dayAfterTomorrow = weekDays[now.getDay() + 2];
 let twoDaysAfterTomorrow = weekDays[now.getDay() + 3];
 
-function showWeatherPrediction() {
+function showForecast(response) {
+  let tomorrowTemperature = document.querySelector("#tomorrowTemperature");
+  tomorrowTemperature.innerHTML = `${Math.round(
+    response.data.list[8].main.temp
+  )}°C`;
+  let dayAfterTomorrowTemperature = document.querySelector(
+    "#dayAfterTomorrowTemperature"
+  );
+  dayAfterTomorrowTemperature.innerHTML = `${Math.round(
+    response.data.list[16].main.temp
+  )}°C`;
+  let twoDaysAfterTomorrowTemperature = document.querySelector(
+    "#twoDaysAfterTomorrowTemperature"
+  );
+  twoDaysAfterTomorrowTemperature.innerHTML = `${Math.round(
+    response.data.list[24].main.temp
+  )}°C`;
+
+  console.log(response.data);
+
   let displayTomorrow = document.querySelector("#tomorrow");
   displayTomorrow.innerHTML = `${tomorrow}`;
   let displayDayAfterTomorrow = document.querySelector("#dayAfterTomorrow");
@@ -77,11 +96,10 @@ function showWeatherPrediction() {
 
 function search(city) {
   let apiKey = "9b41700e7dcfb48ddf3be545946f91cc";
-  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios
-    .get(url)
-    .then(showCurrentWeather)
-    .then(showWeatherPrediction);
+  let urlCurrentCity = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(urlCurrentCity).then(showCurrentWeather);
+  let urlForecast = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(urlForecast).then(showForecast);
 }
 let form = document.querySelector("form");
 form.addEventListener("submit", handleSubmit);
@@ -111,12 +129,10 @@ function displayCurrentWeatherCurrentLocation() {
     let longitude = position.coords.longitude;
 
     let apiKey = "9b41700e7dcfb48ddf3be545946f91cc";
-    let apiEndPoint = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
-
-    axios
-      .get(apiEndPoint)
-      .then(showCurrentWeather)
-      .then(showWeatherPrediction);
+    let urlCurrentGPS = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+    axios.get(urlCurrentGPS).then(showCurrentWeather);
+    let urlForecastGPS = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+    axios.get(urlForecastGPS).then(showForecast);
   }
   navigator.geolocation.getCurrentPosition(newPosition);
 }
