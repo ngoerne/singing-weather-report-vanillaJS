@@ -65,6 +65,7 @@ function showCurrentWeather(response) {
     "src",
     "http://openweathermap.org/img/w/" + response.data.weather[0].icon + ".png"
   );
+  document.getElementById("musicPlayer").style.display = "block";
 }
 
 let tomorrow = weekDays[now.getDay() + 1];
@@ -156,6 +157,7 @@ function displayCurrentWeatherCurrentLocation() {
     let displayCurrentDate = document.querySelector("#currentDate");
     displayCurrentDate.innerHTML = `${weekDay}, ${monthName} ${date}, ${year}`;
   }
+
   function newPosition(position) {
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude;

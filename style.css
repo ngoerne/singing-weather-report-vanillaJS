@@ -63,3 +63,7 @@ form {
 #twoDaysAfterTomorrow {
   font-weight: 700;
 }
+
+#musicPlayer {
+  display: none;
+}
