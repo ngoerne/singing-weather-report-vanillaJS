@@ -66,7 +66,7 @@ function showCurrentWeather(response) {
     "http://openweathermap.org/img/w/" + response.data.weather[0].icon + ".png"
   );
 
-  if (response.data.weather[0].main === "clear") {
+  if (response.data.weather[0].main === "Clear") {
     document.getElementById("musicSun").style.display = "block";
   } else {
     document.getElementById("musicRain").style.display = "block";
