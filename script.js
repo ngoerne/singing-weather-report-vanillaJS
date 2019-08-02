@@ -66,7 +66,11 @@ function showCurrentWeather(response) {
     "http://openweathermap.org/img/w/" + response.data.weather[0].icon + ".png"
   );
 
-  document.getElementById("musicPlayer").style.display = "block";
+  if (response.data.weather[0].main === "clear") {
+    document.getElementById("musicSun").style.display = "block";
+  } else {
+    document.getElementById("musicRain").style.display = "block";
+  }
 }
 
 let tomorrow = weekDays[now.getDay() + 1];

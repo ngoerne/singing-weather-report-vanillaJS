@@ -70,6 +70,10 @@ form {
   top: +40px;
 }
 
-#musicPlayer {
+#musicRain {
+  display: none;
+}
+
+#musicSun {
   display: none;
 }
