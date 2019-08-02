@@ -68,8 +68,17 @@ function showCurrentWeather(response) {
 
   if (response.data.weather[0].main === "Clear") {
     document.getElementById("musicSun").style.display = "block";
-  } else {
+  }
+  if (response.data.weather[0].main === "Drizzle") {
+    document.getElementById("musicDrizzle").style.display = "block";
+  }
+  if (response.data.weather[0].main === "Rain") {
     document.getElementById("musicRain").style.display = "block";
+  }
+  if (response.data.weather[0].main === "Clouds") {
+    document.getElementById("musicClouds").style.display = "block";
+  } else {
+    document.getElementById("musicAtmosphere").style.display = "block";
   }
 }
 

@@ -70,10 +70,12 @@ form {
   top: +40px;
 }
 
-#musicRain {
-  display: none;
-}
-
-#musicSun {
+#musicDrizzle,
+#musicRain,
+#musicSun,
+#musicThunderstorm,
+#musicSnow,
+#musicClouds,
+#musicAtmosphere {
   display: none;
 }
