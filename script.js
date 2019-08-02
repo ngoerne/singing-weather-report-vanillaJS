@@ -77,7 +77,8 @@ function showCurrentWeather(response) {
   }
   if (response.data.weather[0].main === "Clouds") {
     document.getElementById("musicClouds").style.display = "block";
-  } else {
+  }
+  if (response.data.weather[0].main === "Atmosphere") {
     document.getElementById("musicAtmosphere").style.display = "block";
   }
 }
