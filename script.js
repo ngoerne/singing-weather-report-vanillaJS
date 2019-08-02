@@ -65,6 +65,7 @@ function showCurrentWeather(response) {
     "src",
     "http://openweathermap.org/img/w/" + response.data.weather[0].icon + ".png"
   );
+
   document.getElementById("musicPlayer").style.display = "block";
 }
 

@@ -64,6 +64,12 @@ form {
   font-weight: 700;
 }
 
+#iconCurrentWeather {
+  position: relative;
+  left: +65px;
+  top: +40px;
+}
+
 #musicPlayer {
   display: none;
 }
