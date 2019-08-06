@@ -67,21 +67,15 @@ function showCurrentWeather(response) {
     "http://openweathermap.org/img/w/" + response.data.weather[0].icon + ".png"
   );
 
-  if (response.data.weather[0].main === "Clear") {
-    document.getElementById("musicClear").style.display = "block";
-  }
-  if (response.data.weather[0].main === "Drizzle") {
-    document.getElementById("musicDrizzle").style.display = "block";
-  }
-  if (response.data.weather[0].main === "Rain") {
-    document.getElementById("musicRain").style.display = "block";
-  }
-  if (response.data.weather[0].main === "Clouds") {
-    document.getElementById("musicClouds").style.display = "block";
-  }
-  if (response.data.weather[0].main === "Atmosphere") {
-    document.getElementById("musicAtmosphere").style.display = "block";
-  }
+  const types = ["Clear", "Drizzle", "Rain", "Clouds", "Atmosphere"];
+  types.forEach(type => {
+    const musicType = `music${type}`;
+    if (response.data.weather[0].main === type) {
+      document.getElementById(musicType).style.display = "block";
+    } else {
+      document.getElementById(musicType).style.display = "none";
+    }
+  });
 }
 
 let tomorrow = weekDays[now.getDay() + 1];
