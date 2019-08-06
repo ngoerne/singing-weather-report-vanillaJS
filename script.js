@@ -41,6 +41,7 @@ function handleSubmit(event) {
   let keyword = document.querySelector("#keyword");
   search(keyword.value);
 }
+
 function showCurrentWeather(response) {
   let currentTemperature = document.querySelector("#currentTemperature");
   currentTemperature.innerHTML = `${Math.round(response.data.main.temp)}°C`;
