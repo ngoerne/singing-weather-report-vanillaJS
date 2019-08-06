@@ -67,7 +67,14 @@ function showCurrentWeather(response) {
     "http://openweathermap.org/img/w/" + response.data.weather[0].icon + ".png"
   );
 
-  const types = ["Clear", "Drizzle", "Rain", "Clouds", "Atmosphere"];
+  const types = [
+    "Clear",
+    "Drizzle",
+    "Rain",
+    "Clouds",
+    "Atmosphere",
+    "Thunderstorm"
+  ];
   types.forEach(type => {
     const musicType = `music${type}`;
     if (response.data.weather[0].main === type) {
