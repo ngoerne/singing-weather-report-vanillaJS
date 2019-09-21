@@ -15,6 +15,7 @@ h1 {
 h2 {
   display: inline-block;
   font-family: "Raleway", sans-serif;
+  font-size: 2px;
   color: #1a1111;
 }
 ul {
@@ -67,10 +68,10 @@ form {
 
 #musicDrizzle,
 #musicRain,
+#musicAtmosphere,
 #musicClear,
 #musicThunderstorm,
 #musicSnow,
-#musicClouds,
-#musicAtmosphere {
+#musicClouds {
   display: none;
 }
