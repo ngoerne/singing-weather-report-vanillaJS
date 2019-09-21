@@ -1,40 +1,13 @@
-let now = new Date();
-let date = now.getDate();
-let year = now.getFullYear();
-let day = now.getDay();
-let weekDays = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday"
-];
-let weekDay = weekDays[day];
-let month = now.getMonth();
-let monthNames = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December"
-];
-let monthName = monthNames[month];
+let today = moment().format("dddd, MMMM D, YYYY");
+let tomorrow = moment(new Date())
+  .add(1, "days")
+  .format("dddd");
+let dayAfterTomorrow = moment(new Date())
+  .add(2, "days")
+  .format("dddd");
+let twoDaysAfterTomorrow = moment(new Date())
+  .add(3, "days")
+  .format("dddd");
 
 function handleSubmit(event) {
   event.preventDefault();
@@ -59,7 +32,7 @@ function showCurrentWeather(response) {
   wind.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} m/s`;
 
   let displayCurrentDate = document.querySelector("#currentDate");
-  displayCurrentDate.innerHTML = `${weekDay}, ${monthName} ${date}, ${year}`;
+  displayCurrentDate.innerHTML = `${today}`;
 
   let iconCurrentWeather = document.querySelector("#iconCurrentWeather");
   iconCurrentWeather.setAttribute(
@@ -84,10 +57,6 @@ function showCurrentWeather(response) {
     }
   });
 }
-
-let tomorrow = weekDays[now.getDay() + 1];
-let dayAfterTomorrow = weekDays[now.getDay() + 2];
-let twoDaysAfterTomorrow = weekDays[now.getDay() + 3];
 
 function showForecast(response) {
   console.log(response.data);
@@ -172,7 +141,7 @@ function displayCurrentWeatherCurrentLocation() {
     wind.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} m/s`;
 
     let displayCurrentDate = document.querySelector("#currentDate");
-    displayCurrentDate.innerHTML = `${weekDay}, ${monthName} ${date}, ${year}`;
+    displayCurrentDate.innerHTML = `${today}`;
   }
 
   function newPosition(position) {
