@@ -7,6 +7,12 @@
   background-image: linear-gradient(to top, #9fd1e8 0%, #f6faff 100%);
 }
 
+figure {
+  margin: 5em auto;
+  width: 350px;
+  height: 150px;
+}
+
 h1 {
   display: inline-block;
   font-family: "Raleway", sans-serif;
@@ -14,10 +20,10 @@ h1 {
 }
 #place {
   display: inline-block;
-  font-size: 26px;
+  font-size: 25px;
   font-family: "Raleway", sans-serif;
   color: #1a1111;
-  font-weight: 600;
+  font-weight: 600px;
 }
 ul {
   list-style-type: none;
@@ -76,4 +82,9 @@ form {
 #musicSnow,
 #musicClouds {
   display: none;
+}
+
+#credit {
+  text-align: right;
+  font-size: 10px;
 }

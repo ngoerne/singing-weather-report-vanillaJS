@@ -40,6 +40,19 @@ function showCurrentWeather(response) {
     "http://openweathermap.org/img/w/" + response.data.weather[0].icon + ".png"
   );
 
+  var icons = new Skycons({ color: "black" });
+  icons.set("clear-day", Skycons.CLEAR_DAY);
+  icons.set("clear-night", Skycons.CLEAR_NIGHT);
+  icons.set("partly-cloudy-day", Skycons.PARTLY_CLOUDY_DAY);
+  icons.set("partly-cloudy-night", Skycons.PARTLY_CLOUDY_NIGHT);
+  icons.set("cloudy", Skycons.CLOUDY);
+  icons.set("rain", Skycons.RAIN);
+  icons.set("sleet", Skycons.SLEET);
+  icons.set("snow", Skycons.SNOW);
+  icons.set("wind", Skycons.WIND);
+  icons.set("fog", Skycons.FOG);
+  icons.play();
+
   const types = [
     "Clear",
     "Drizzle",
@@ -111,6 +124,8 @@ function showForecast(response) {
   twoDaysAfterTomorrowTemperature.innerHTML = `${Math.round(
     response.data.list[23].main.temp
   )}°C`;
+  let credit = document.querySelector("#credit");
+  credit.innerHTML = `icons made by <a href="https://www.flaticon.com/authors/linector" title="Linector">Linector</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a>`;
 }
 
 function search(city) {

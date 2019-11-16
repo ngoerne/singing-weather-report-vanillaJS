@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Singing Weather Report</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="CSS/style.css" />
     <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap" rel="stylesheet">
     <link
       rel="stylesheet"
@@ -16,10 +16,14 @@
     <script src="https://unpkg.com/moment" />
     <script src="https://kit.fontawesome.com/99692a6833.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  </head>
-  <body>
+  </head><body>
+  
+  
     <div class="app">
       <h1>Sing me the weather in...</h1>
+
+<script src="https://rawgithub.com/darkskyapp/skycons/master/skycons.js"></script>
+
       <form>
         <div class="form-row align-items-center">
           <div class="col-auto">
@@ -48,15 +52,29 @@
       </form>
       <br>
 
+
       <h2 id="place"></h2>
       <br />
       <span id="currentDate"></span>
-
+<figure class="icons">
+	<canvas id="clear-day" width="64" height="64"></canvas>
+	<canvas id="clear-night" width="64" height="64"></canvas>
+	<canvas id="partly-cloudy-day" width="64" height="64"></canvas>
+	<canvas id="partly-cloudy-night" width="64" height="64"></canvas>
+	<canvas id="cloudy" width="64" height="64"></canvas>
+	<canvas id="rain" width="64" height="64"></canvas>
+	<canvas id="sleet" width="64" height="64"></canvas>
+	<canvas id="snow" width="64" height="64"></canvas>
+	<canvas id="wind" width="64" height="64"></canvas>
+	<canvas id="fog" width="64" height="64"></canvas>
+</figure>
+<script src="https://rawgithub.com/darkskyapp/skycons/master/skycons.js"></script>
       <div class="container">
         <div class="row">
           <div class="col-6">
           <img id="iconCurrentWeather"/>
           </div>
+          
           <div class="col-6">
             <span id="currentTemperature"></span>
             <ul>
@@ -70,13 +88,13 @@
       </div>
          <div class="musicPlayer">
 
-<iframe id="musicDrizzle" src="https://open.spotify.com/embed/track/0zRtBDhwtIFTfoK2HuURbM" width="460" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-<iframe id="musicClear" src="https://open.spotify.com/embed/track/6dGnYIeXmHdcikdzNNDMm2" width="460" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-<iframe id="musicThunderstorm" src="https://open.spotify.com/embed/track/14XWXWv5FoCbFzLksawpEe" width="460" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-<iframe id="musicSnow" src="https://open.spotify.com/embed/track/2uFaJJtFpPDc5Pa95XzTvg" width="460" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-<iframe id="musicRain" src="https://open.spotify.com/embed/track/5PRHG8t3cB86HV5H7D2MAr" width="460" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-<iframe id="musicClouds" src="https://open.spotify.com/embed/track/6VIgG1jh0jI7X30jhF87Fw" width="460" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-<iframe id="musicAtmosphere" src="https://open.spotify.com/embed/track/18nVec4X5DlXfePjAZkVwO" width="460" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+<iframe id="musicDrizzle" src="https://open.spotify.com/embed/track/0zRtBDhwtIFTfoK2HuURbM" width="460" height="80" frameborder="3" allowtransparency="true" allow="encrypted-media"></iframe>
+<iframe id="musicClear" src="https://open.spotify.com/embed/track/6dGnYIeXmHdcikdzNNDMm2" width="460" height="80" frameborder="3" allowtransparency="true" allow="encrypted-media"></iframe>
+<iframe id="musicThunderstorm" src="https://open.spotify.com/embed/track/14XWXWv5FoCbFzLksawpEe" width="460" height="80" frameborder="3" allowtransparency="true" allow="encrypted-media"></iframe>
+<iframe id="musicSnow" src="https://open.spotify.com/embed/track/2uFaJJtFpPDc5Pa95XzTvg" width="460" height="80" frameborder="3" allowtransparency="true" allow="encrypted-media"></iframe>
+<iframe id="musicRain" src="https://open.spotify.com/embed/track/5PRHG8t3cB86HV5H7D2MAr" width="460" height="80" frameborder="3" allowtransparency="true"></iframe>
+<iframe id="musicClouds" src="https://open.spotify.com/embed/track/6VIgG1jh0jI7X30jhF87Fw" width="460" height="80" frameborder="3" allowtransparency="true" allow="encrypted-media"></iframe>
+<iframe id="musicAtmosphere" src="https://open.spotify.com/embed/track/18nVec4X5DlXfePjAZkVwO" width="460" height="80" frameborder="3" allowtransparency="true" allow="encrypted-media"></iframe>
 </div>
 <br>
 
@@ -99,8 +117,9 @@
           </div>
         </div>
       </div>
+      <div id="credit"></div>
     </div>
-
-    <script src="script.js"></script>
+    <script src="skycons.js"></script>
+   <script src="script.js"></script>
   </body>
 </html>
